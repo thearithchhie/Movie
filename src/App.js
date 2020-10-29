@@ -1,23 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-//Componets
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import Home from "./components/pages/Home";
-import Services from "./components/pages/Services";
-import Products from "./components/pages/Products";
-import SignUp from "./components/pages/SignUp";
-
+import Header from "./components/header";
+import WatchList from "./components/watch_list";
+import Watchd from "./components/watchd";
+import Add from "./components/add";
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
+        <Header />
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/services" exact component={Services}/>
-          <Route path="/products" exact component={Products}/>
-          <Route path="/signUp" exact component={SignUp}/>
+          <Route exact path="/" component={WatchList} />
+          <Route path="/Add" component={Add} />
+          <Route path="/watched" component={Watchd} />
         </Switch>
       </Router>
     </>
